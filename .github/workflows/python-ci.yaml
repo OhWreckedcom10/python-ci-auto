@@ -1,0 +1,31 @@
+name: Python CI  # שם ה-Workflow שיופיע בגיטהאב
+
+# מתי להפעיל את ה-Workflow הזה
+on:
+  push:
+    branches: [ "master" ]  # להריץ את ה-CI בכל פעם שיש push ל-branch בשם master
+  pull_request:
+    branches: [ "master" ]  # להריץ את ה-CI בכל פעם שנפתח Pull Request שמכוון ל-master
+
+jobs:  # הגדרת המשימות שיבוצעו ב-CI
+  build:  # שם המשימה (אפשר לקרוא לה איך שרוצים)
+    runs-on: ubuntu-latest  # להפעיל את המשימה על סביבת אובונטו עדכנית (שרת וירטואלי של GitHub)
+
+    steps:  # סדרת השלבים שיבוצעו בסביבת הריצה
+
+    - uses: actions/checkout@v3
+      # הורדת כל קבצי הקוד מה-repo לשרת הווירטואלי, כדי שנוכל לעבוד איתם
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'  # התקנת פייתון בגרסה 3.11 בסביבת ה-runner
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip  # קודם כל מעדכן את מנהל החבילות pip לגרסה העדכנית
+        pip install -r requirements.txt      # מתקין את כל החבילות שכתובות בקובץ requirements.txt
+
+    - name: Run tests
+      run: |
+        pytest tests  # מריץ את כל הבדיקות שנמצאות בתיקיית tests
