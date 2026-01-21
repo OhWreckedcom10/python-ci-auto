@@ -15,7 +15,7 @@ def test_multiply():
 
 
 def test_multiply1():
-    assert multiply(10, 3) == 111
+    assert multiply(10, 3) == 30
 
 
 def test_failed():
