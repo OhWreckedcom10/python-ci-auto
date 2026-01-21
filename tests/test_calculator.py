@@ -11,7 +11,7 @@ def test_subtract():
 
 
 def test_multiply():
-    assert multiply(4, 3) == 111
+    assert multiply(4, 3) == 12
 
 
 def test_failed():
