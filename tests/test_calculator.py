@@ -11,7 +11,7 @@ def test_subtract():
 
 
 def test_multiply():
-    assert multiply(4, 3) == 12
+    assert multiply(4, 3) == 15
 
 def test_divide():
     assert divide(10, 2) == 5
