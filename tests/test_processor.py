@@ -1,5 +1,6 @@
 import pytest
-from src.processor import normalize_numbers, filter_outliers, calculate_statistics
+
+from src.processor import calculate_statistics, filter_outliers, normalize_numbers
 
 
 @pytest.mark.parametrize(
@@ -48,14 +49,20 @@ def test_calculate_statistics_basic():
 
 
 def test_calculate_statistics_single_value():
-    assert calculate_statistics([7]) == {"min": 7.0, "max": 7.0, "average": 7.0}
+    assert calculate_statistics([7]) == {
+        "min": 7.0,
+        "max": 7.0,
+        "average": 7.0,
+    }
 
 
 def test_calculate_statistics_negative_values():
     stats = calculate_statistics([-5, -1, -3])
     assert stats["min"] == -5.0
     assert stats["max"] == -1.0
-    assert stats["average"] == pytest.approx((-5 - 1 - 3) / 3)
+    assert stats["average"] == pytest.approx(
+        (-5 - 1 - 3) / 3
+    )
 
 
 def test_calculate_statistics_empty_raises():

@@ -1,6 +1,6 @@
 import pytest
-from src.data_validator import is_positive, is_in_range, is_integer
 
+from src.data_validator import is_in_range, is_integer, is_positive
 
 
 def test_is_positive_true():
@@ -49,6 +49,5 @@ def test_is_integer_false_bool_edge():
 
 
 def test_expected_failure_demo():
-    # "בדיקה אחת שמוודאת כישלון צפוי" באמצעות xfail
-    pytest.xfail("דוגמה לכישלון צפוי כחלק מהדרישה")
+    pytest.xfail("Example of an expected failure for the assignment requirement")
     assert is_positive(-1) is True

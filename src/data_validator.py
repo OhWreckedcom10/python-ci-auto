@@ -7,9 +7,8 @@ def is_in_range(number, min_value, max_value):
 
 
 def is_integer(value):
-    # בודק גם int וגם float ששווה לערך שלם
     if isinstance(value, bool):
-        return False  # כי True/False הם תת־סוג של int
+        return False
     if isinstance(value, int):
         return True
     if isinstance(value, float):
