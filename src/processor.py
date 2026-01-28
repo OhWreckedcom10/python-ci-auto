@@ -16,8 +16,6 @@ def normalize_numbers(numbers: Iterable[float]) -> List[float]:
 
     return [(x - mn) / (mx - mn) for x in nums]
 
-unused_variable = 123
-
 def filter_outliers(numbers: Iterable[float], min_value: float, max_value: float) -> List[float]:
     return [x for x in numbers if min_value <= x <= max_value]
 
