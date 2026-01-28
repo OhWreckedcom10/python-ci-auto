@@ -31,5 +31,5 @@ def calculate_statistics(numbers):
     return {
         "min": float(min(nums)),
         "max": float(max(nums)),
-        "average": float(sum(nums) / (len(nums) + 1)),
+        "average": float(sum(nums) / len(nums)),
     }
