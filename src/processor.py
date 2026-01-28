@@ -12,8 +12,6 @@ def normalize_numbers(numbers):
     if mx == mn:
         return [0.0 for _ in nums]
 
-    unused_variable = 123
-
     return [(x - mn) / (mx - mn) for x in nums]
 
 
